@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "remember-url-hashes",
+	"version": "${version}",
+	"name": "Remember Url Hashes",
+	"description": "Remember hashes of previously downloaded server resource packs this session for servers where the pack link is unique per version or just updates rarely",
+	"authors": [
+		"D4ylight"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/remember-url-hashes/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"org.daylight.RememberUrlHashes"
+		],
+		"client": [
+			"org.daylight.rememberurlhashes.RememberUrlHashesClient"
+		]
+	},
+	"mixins": [
+		"remember-url-hashes.mixins.json",
+		{
+			"config": "remember-url-hashes.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.4",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
